@@ -1,0 +1,139 @@
+//  Custom Color system
+$primary: #7FD1B9;
+$secondary: #7FD1B9;
+$success: #AFDBF4;
+$info: #f7c294;
+$warning: #7FD1B9;
+$danger: #ff425b;
+$light: #F3E9F1;
+$dark: #241628;
+
+
+$input-btn-focus-width: .2rem !default;
+$input-btn-focus-color: rgba($secondary, .25) !default;
+$input-btn-invalid-color: rgba($danger, .75) !default;
+$input-btn-invalid-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-invalid-color !default;
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+.p-none {
+  padding: 0px !important;
+}
+
+.m-none {
+  margin: 0px !important;
+}
+
+.card {
+  border-radius: 15px !important;
+}
+
+.hoverable {
+  &:hover {
+    transform: scale(1.0075);
+  }
+}
+
+.image-small {
+  height: 220px;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+  object-fit: cover;
+}
+
+
+.h1-shadow {
+  text-shadow: 1px 1px 2px $warning;
+}
+
+.section-header-hr {
+  width: 75%;
+  margin-left: 0px;
+  background-color: $warning;
+}
+
+.image-large {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767.98px) {
+  .image-large {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .image-large {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+}
+
+
+.single-product-card {
+  border-radius: 15px;
+  max-width: 800px;
+  position: relative;
+  top: 0px;
+}
+
+#cartQty {
+  border-radius: 50%;
+  background-color: $light;
+  border: 1px solid darken($light, 10%);
+  min-width: 15px;
+  min-height: 15px;
+  position: relative;
+  left: 30px;
+  bottom: -5px;
+  font-size: 9px;
+}
+
+#cart-empty-wrapper {
+  min-height: 550px;
+  width: 95%;
+  max-width: 500px;
+  margin-top: 10%;
+  border-radius: 15px !important;
+}
+
+#cart-empty-content {
+  border-radius: 15px;
+}
+
+.invalid {
+  box-shadow: $input-btn-invalid-box-shadow;
+}
+
+#warning {
+  font-size: 18px;
+  color: $danger;
+}
+
+
+
+
+@media (max-width: 378px) {
+
+  #summary,
+  #form {
+    width: 100% !important;
+    font-size: smaller !important;
+  }
+}
+
+#confirmation-page-wrapper {
+  min-height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#confirmation-page-content {
+  border-radius: 15px !important;
+  width: 95%;
+  max-width: 500px;
+}
+
