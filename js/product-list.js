@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-  apiRequestList.open('GET', 'http://localhost:3000/api/teddies');
+  apiRequestList.open('GET', 'https://git.heroku.com/project7-backend.git/api/teddies');
   apiRequestList.send();
 });
 
