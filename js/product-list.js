@@ -30,7 +30,7 @@ apiRequestList.onreadystatechange = () => {
         document.getElementsByClassName('description')[index].textContent = item.description;
         document.getElementsByClassName('price')[index].textContent = `$${item.price/100}`;
         document.getElementsByClassName('image')[index].src = item.imageUrl;
-        buttons[index].setAttribute('href', `/pages/single-item.html?id=${id}`);
+        buttons[index].setAttribute('href', 'https://www.google.com/');
       }) 
     }
   }
