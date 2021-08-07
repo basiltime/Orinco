@@ -14,10 +14,10 @@ apiRequestList.onreadystatechange = () => {
     let firstDigit = statusCode.toString()[0];
 
     if (firstDigit == 4) {
-      window.location.href = "frontend/pages/error-page-404.html"
+      window.location.href = "pages/error-page-404.html"
 
     } else if (firstDigit == 5) {
-      window.location.href = "frontend/pages/error-page-500.html"
+      window.location.href = "pages/error-page-500.html"
 
     // Handle API Response  
     } else {
@@ -30,7 +30,7 @@ apiRequestList.onreadystatechange = () => {
         document.getElementsByClassName('description')[index].textContent = item.description;
         document.getElementsByClassName('price')[index].textContent = `$${item.price/100}`;
         document.getElementsByClassName('image')[index].src = item.imageUrl;
-        buttons[index].setAttribute('href', `frontend/pages/single-item.html?id=${id}`);
+        buttons[index].setAttribute('href', `pages/single-item.html?id=${id}`);
       }) 
     }
   }

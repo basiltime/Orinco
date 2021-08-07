@@ -23,10 +23,10 @@ apiRequestItem.onreadystatechange = () => {
     let firstDigit = statusCode.toString()[0];
 
     if (firstDigit == 4) {
-      window.location.href = "frontend/pages/error-page-404.html"
+      window.location.href = "pages/error-page-404.html"
 
     } else if (firstDigit == 5) {
-      window.location.href = "frontend/pages/error-page-500.html"
+      window.location.href = "pages/error-page-500.html"
 
     // Handle API Response  
     } else {

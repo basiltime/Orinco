@@ -162,35 +162,13 @@ submitButton.addEventListener('click', ($event) => {
 
   // Create the data object and send POST request IF form is validated
   else {
-    let data = {
-      contact: contactData,
-      products: productsArray
-    }
-
-    // POST request
-    const xhr = new XMLHttpRequest();
-
-    xhr.open('POST', 'http://localhost:3000/api/teddies/order');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.responseType = 'json';
-    xhr.send(JSON.stringify(data));
-
-    // Handle API Response  
-    xhr.onload = () => {
-      console.log(xhr.response);
-      let total = document.getElementById('cart-total').textContent;
-      myCart.setItem("id", xhr.response.orderId)
-      myCart.setItem("price", total)
-      window.location.href = "/frontend/pages/confirmation-page.html"
-    }
-  }
-
 
 
 let data = {
       contact: contactData,
       products: productsArray
     }
+    
 
 async function postData(url = '', data = {} ) {
   const response = await fetch(url, {
@@ -201,16 +179,16 @@ async function postData(url = '', data = {} ) {
     body: JSON.stringify(data) 
   })
   return response.json();
+
 }
 
 postData('http://localhost:3000/api/teddies/order', data )
   .then(data => {
-    console.log(response.status)
     let total = document.getElementById('cart-total').textContent;
     myCart.setItem("id", data.orderId)
     myCart.setItem("price", total)
-    window.location.href = "../../frontend/pages/confirmation-page.html"
-  }).catch(window.location.href = "../../frontend/pages/error-page-404.html")
-}
+    window.location.href = "confirmation-page.html"
+  }).catch(error=> {window.location.href = "error-page-404.html" }) 
 
-)
+}
+})
