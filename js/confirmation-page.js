@@ -1,5 +1,5 @@
 // If user refreshes the page, redirects to product list page rather than showing an empty confirmation page
-if (localStorage.length === 0) { window.location.href = "../../index.html"}
+if (localStorage.length === 0) { window.location.href = "../index.html"}
 
 // Display the order id and total price
 let id = document.getElementById('id')
