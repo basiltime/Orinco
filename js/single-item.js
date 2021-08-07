@@ -6,7 +6,7 @@ const id = urlParam.get("id");
 
 // Event listener to send GET request on load
 window.addEventListener('load', (itemId) => {
-  apiRequestItem.open('GET', `http://localhost:3000/api/teddies/${id}`);
+  apiRequestItem.open('GET', `https://project7-backend.herokuapp.com/api/teddies${id}`);
   apiRequestItem.send();
   updateCart();
 });

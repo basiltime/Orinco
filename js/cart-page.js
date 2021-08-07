@@ -17,7 +17,7 @@ if (myCart.length === 0) {
     let values = parseInt(myCart.getItem(key)); // ** values = item quantity **
 
     window.addEventListener('load', (id) => {
-      apiRequestItem.open('GET', `http://localhost:3000/api/teddies/${key}`);
+      apiRequestItem.open('GET', `https://project7-backend.herokuapp.com/api/teddies/${key}`);
       apiRequestItem.send();
     });
 
@@ -182,7 +182,7 @@ async function postData(url = '', data = {} ) {
 
 }
 
-postData('http://localhost:3000/api/teddies/order', data )
+postData('https://project7-backend.herokuapp.com/api/teddies', data )
   .then(data => {
     let total = document.getElementById('cart-total').textContent;
     myCart.setItem("id", data.orderId)
