@@ -21,10 +21,4 @@ Click [here](https://docs.google.com/document/d/19DZtJHJH2nqFjnFES78r33d8LOyGKoY
 To Use the Site:
 ----------------
 Backend:
-- Clone the backend repo [here](https://github.com/OpenClassrooms-Student-Center/JWDP5)
-- From within the backend directory, run `npm install` do download dependencies
-- Run `node server`  within the backend directory
-
-Frontend:
-- Clone this repo
-- Open index.html in your browser
+Visit https://orinco.netlify.app/

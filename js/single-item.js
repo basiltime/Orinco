@@ -5,8 +5,8 @@ const id = urlParam.get("id");
 
 
 // Event listener to send GET request on load
-window.addEventListener('load', (itemId) => {
-  apiRequestItem.open('GET', `https://project7-backend.herokuapp.com/api/teddies${id}`);
+window.addEventListener('load', () => {
+  apiRequestItem.open('GET', `https://project7-backend.herokuapp.com/api/teddies/${id}`);
   apiRequestItem.send();
   updateCart();
 });
@@ -23,10 +23,10 @@ apiRequestItem.onreadystatechange = () => {
     let firstDigit = statusCode.toString()[0];
 
     if (firstDigit == 4) {
-      window.location.href = "pages/error-page-404.html"
+      window.location.href = "error-page-404.html"
 
     } else if (firstDigit == 5) {
-      window.location.href = "pages/error-page-500.html"
+      window.location.href = "error-page-500.html"
 
     // Handle API Response  
     } else {

@@ -182,7 +182,7 @@ async function postData(url = '', data = {} ) {
 
 }
 
-postData('https://project7-backend.herokuapp.com/api/teddies', data )
+postData('https://project7-backend.herokuapp.com/api/teddies/order', data )
   .then(data => {
     let total = document.getElementById('cart-total').textContent;
     myCart.setItem("id", data.orderId)
