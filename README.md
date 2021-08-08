@@ -20,5 +20,4 @@ Click [here](https://docs.google.com/document/d/19DZtJHJH2nqFjnFES78r33d8LOyGKoY
 
 To Use the Site:
 ----------------
-Backend:
-Visit https://orinco.netlify.app/
+Visit: https://orinco.netlify.app/
