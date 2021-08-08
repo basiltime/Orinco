@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-  apiRequestList.open('GET', 'http://localhost:5000/api/teddies');
+  apiRequestList.open('GET', 'https://project7-backend.herokuapp.com/api/teddies');
   apiRequestList.send();
 });
 
@@ -14,7 +14,7 @@ apiRequestList.onreadystatechange = () => {
     let firstDigit = statusCode.toString()[0];
 
     if (firstDigit == 4) {
-      window.location.href = "www.google.com"
+      window.location.href = "/pages/error-page-404.html"
 
     } else if (firstDigit == 5) {
       window.location.href = "/pages/error-page-500.html"
