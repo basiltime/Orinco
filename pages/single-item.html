@@ -13,6 +13,13 @@
 
 <body>
 
+    <!-- LOADING SPINNER -->    
+<div class="spinner-background position-absolute w-100 h-100">
+    <div class="spinner-grow text-primary position-relative" style="left: 50%; top: 50%;" role="status"><span class="sr-only">Loading...</span></div>
+</div>
+
+<!-- REGULAR PAGE CONTENT -->
+<div class="main d-none">
 
     <!-- NAVBAR-->
     <div class="bg-primary">
@@ -40,6 +47,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- MAIN SECTION  -->
     <div class="single-product-section d-flex p-5">
@@ -118,7 +126,7 @@
             </div>
         </div>
     </footer>
-
+</div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS, then custom JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -130,6 +138,7 @@
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
     </script>
     <script src="../js/single-item.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
     
 </body>
 

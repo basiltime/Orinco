@@ -1,42 +1,23 @@
-window.addEventListener('load', () => {
-  apiRequestList.open('GET', 'https://project7-backend.herokuapp.com/api/teddies');
-  apiRequestList.send();
-});
+window.onload = () => {
+  getProducts()  
+};
 
-
-let apiRequestList = new XMLHttpRequest();
-
-apiRequestList.onreadystatechange = () => {
-  if (apiRequestList.readyState === 4) {
-
-    // Error Handling
-    let statusCode = apiRequestList.status;
-    let firstDigit = statusCode.toString()[0];
-
-    if (firstDigit == 4) {
-      window.location.href = "/pages/error-page-404.html"
-
-    } else if (firstDigit == 5) {
-      window.location.href = "/pages/error-page-500.html"
-
-    // Handle API Response  
-    } else {
-      let response = JSON.parse(apiRequestList.response);
+const getProducts = async () => {
+let response = await axios('https://project7-backend.herokuapp.com/api/teddies')
       let buttons = document.getElementsByClassName('btn');
-
-      response.forEach((item, index) => {
+      response.data.forEach((item, index) => {
         let id = item._id;
         document.getElementsByClassName('name')[index].textContent = item.name;
         document.getElementsByClassName('description')[index].textContent = item.description;
         document.getElementsByClassName('price')[index].textContent = `$${item.price/100}`;
         document.getElementsByClassName('image')[index].src = item.imageUrl;
         buttons[index].setAttribute('href', `pages/single-item.html?id=${id}`);
-      }) 
-    }
+      })
+
+      // Show page content, hide loading spinner
+      document.getElementsByClassName("main")[0].classList.remove("d-none")
+      document.getElementsByClassName("spinner-background")[0].classList.add("d-none")
   }
-};
-
-
 
 function updateCart() {
   let totalQty = 0;
@@ -49,4 +30,5 @@ function updateCart() {
 
   return document.getElementById('cartQty').textContent = totalQty;
 }
+
 updateCart();

@@ -1,4 +1,4 @@
-(This is version 2.0 of Project 5. I am modifying the site so it can be deployed live.)
+(This is version 2.0 of Project 5- the version that is deployed live 😍.)
 
 Orinco E-Commerce Site
 ===========================

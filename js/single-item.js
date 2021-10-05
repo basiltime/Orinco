@@ -5,62 +5,42 @@ const id = urlParam.get("id");
 
 
 // Event listener to send GET request on load
-window.addEventListener('load', () => {
-  apiRequestItem.open('GET', `https://project7-backend.herokuapp.com/api/teddies/${id}`);
-  apiRequestItem.send();
-  updateCart();
-});
+window.onload = () => {
+  getProduct()
+  updateCart()
+}
 
-
-
-// GET request body
-let apiRequestItem = new XMLHttpRequest();
-apiRequestItem.onreadystatechange = () => {
-  if (apiRequestItem.readyState === 4) {
-
-    // Error Handling
-    let statusCode = apiRequestItem.status;
-    let firstDigit = statusCode.toString()[0];
-
-    if (firstDigit == 4) {
-      window.location.href = "error-page-404.html"
-
-    } else if (firstDigit == 5) {
-      window.location.href = "error-page-500.html"
-
-    // Handle API Response  
-    } else {
-      //Parses JSON response objects to text and displays requested information
-      response = JSON.parse(apiRequestItem.response);
-
+const getProduct = async () => {
+  let response = await axios(`https://project7-backend.herokuapp.com/api/teddies/${id}`)
       // Populate the DOM with name, price, image and description
-      document.getElementById('name').textContent = response.name;
-      document.getElementById('price').textContent = `$${response.price/100}`;
-      document.getElementById('image').setAttribute('src', response.imageUrl);
-      document.getElementById('description').textContent = response.description;
-
+      document.getElementById('name').textContent = response.data.name;
+      document.getElementById('price').textContent = `$${response.data.price/100}`;
+      document.getElementById('image').setAttribute('src', response.data.imageUrl);
+      document.getElementById('description').textContent = response.data.description;
 
       // Populate color customization drop down
-      for (let i in response.colors) {
+      for (let i in response.data.colors) {
         let dropdown = document.getElementById('dropdown')
         let item = document.createElement('button');
-        item.textContent = response.colors[i];
+        item.textContent = response.data.colors[i];
         item.setAttribute("class", "dropdown-item");
         item.setAttribute("type", "button");
         dropdown.appendChild(item)
       }
+    
 
       // Customization Dropdown Menu
       let dropdownItems = document.getElementsByClassName('dropdown-item');
-
       for (let i = 0; i < dropdownItems.length; i++) {
         dropdownItems[i].addEventListener('click', () => {
           document.getElementById('dropdownMenuButton').textContent = dropdownItems[i].textContent;
         });
       }
-    }
-  }
-};
+
+      // Show page content, hide loading spinner
+      document.getElementsByClassName("main")[0].classList.remove("d-none")
+      document.getElementsByClassName("spinner-background")[0].classList.add("d-none")
+}
 
 
 /////////////////////////////////////////////////////////////////////////
