@@ -28,7 +28,6 @@ const getProduct = async () => {
         dropdown.appendChild(item)
       }
     
-
       // Customization Dropdown Menu
       let dropdownItems = document.getElementsByClassName('dropdown-item');
       for (let i = 0; i < dropdownItems.length; i++) {
@@ -102,3 +101,10 @@ document.getElementById('removeItemBtn').addEventListener('click', ($event) => {
   removeItem(id);
   updateCart()
 });
+
+
+// Event listener to send GET request on load
+window.onload = () => {
+  getProduct()
+  updateCart()
+}
